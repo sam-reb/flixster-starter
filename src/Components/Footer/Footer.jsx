@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import "./Footer.css";
+import React from "react";
 
 const Footer = () => {
-  <div className="Footer">
-    <h1>Footer is here</h1>
-  </div>;
+  return <div>Footer</div>;
 };
 
 export default Footer;

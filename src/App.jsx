@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import Header from "./Components/Header/header";
+import Header from "./Components/Header/Header";
 import MovieList from "./Components/MovieList/MovieList";
 import Footer from "./Components/Footer/Footer";
 
@@ -12,7 +12,6 @@ const App = () => {
       <Footer />
     </>
   );
-  // <div className="App"></div>;
 };
 
 export default App;

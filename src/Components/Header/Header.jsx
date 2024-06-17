@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Header.css";
 
 const Header = () => {
-  <div className="Header">
-    <h1>Flixter</h1>
-  </div>;
+  return <div className="header">Flixster</div>;
 };
 
 export default Header;
