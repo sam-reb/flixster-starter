@@ -8,6 +8,7 @@ const MovieList = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortType, setSortType] = useState("filter-by");
 
   const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -26,7 +27,6 @@ const MovieList = () => {
         setMovies([]);
       }
     }
-
     // setMovies((prevMovies) => [...prevMovies, ...data.results]);
   }
 
@@ -38,13 +38,23 @@ const MovieList = () => {
   const loadMoreMovies = () => {
     const nextPage = page + 1;
     setPage(nextPage);
-    // fetchMovies();
   };
 
-  const filteredMovies = movies.filter(
-    (movie) => movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-    // console.log("filering");
-  );
+  const filteredMovies = movies
+    .filter(
+      (movie) => movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+      // console.log("filering");
+    )
+    .sort((a, b) => {
+      if (sortType === "alphabetic") {
+        return a.title.localeCompare(b.title);
+      } else if (sortType === "release_date") {
+        return new Date(b.release_date) - new Date(a.release_date);
+      } else if (sortType === "rating") {
+        return b.vote_average - a.vote_average;
+      }
+      return 0;
+    });
 
   return (
     <>
@@ -56,6 +66,16 @@ const MovieList = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-input"
         />
+        <select
+          value={sortType}
+          onChange={(e) => setSortType(e.target.value)}
+          className="sort-dropdown"
+        >
+          <option value="filter-by">--Filter By--</option>
+          <option value="alphabetic">Alphabetically</option>
+          <option value="release-date">Release Date</option>
+          <option value="rating">Rating</option>
+        </select>
       </div>
       <div className="movie-list">
         {filteredMovies.map((movie) => (
