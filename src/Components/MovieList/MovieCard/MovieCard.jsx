@@ -5,9 +5,11 @@ import PropTypes from "prop-types";
 const MovieCard = ({ image, title, rating, onClick }) => {
   return (
     <div className="movie-card" onClick={onClick}>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>Rating: {rating}</p>
+      <img src={image} alt={title} style={{ width: "300px", height: "auto" }} />
+      <div className="card-details">
+        <h3>{title}</h3>
+        <p>Rating: {rating}</p>
+      </div>
     </div>
   );
 };

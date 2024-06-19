@@ -97,14 +97,17 @@ const MovieList = () => {
           show={selectedMovie !== null}
           onClose={() => setSelectedMovie(null)}
         >
-          <h2>{selectedMovie.title}</h2>
+          <h2 className="modal-title">{selectedMovie.title}</h2>
           <img
-            src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
+            className="modal-img"
+            src={`https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path}`}
             alt={selectedMovie.title}
-            style={{ width: "100%" }}
+            style={{ width: "800px", height: "auto" }}
           />
-          <h3>Release Date: {selectedMovie.release_date}</h3>
-          <h4>Overview: {selectedMovie.overview}</h4>{" "}
+          <h3 className="modal-date">
+            Release Date: {selectedMovie.release_date}
+          </h3>
+          <h4 className="modal-overview">Overview: {selectedMovie.overview}</h4>{" "}
         </Modal>
       )}
     </>
