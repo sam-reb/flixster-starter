@@ -102,12 +102,11 @@ const MovieList = () => {
             className="modal-img"
             src={`https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path}`}
             alt={selectedMovie.title}
-            style={{ width: "800px", height: "auto" }}
           />
           <h3 className="modal-date">
             Release Date: {selectedMovie.release_date}
           </h3>
-          <h4 className="modal-overview">Overview: {selectedMovie.overview}</h4>{" "}
+          <h4 className="modal-overview">Overview: {selectedMovie.overview}</h4>
         </Modal>
       )}
     </>

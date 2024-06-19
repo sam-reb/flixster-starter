@@ -28,3 +28,56 @@
   max-width: 250px;
   text-align: center;
 }
+
+.movie-card img {
+  width: 300px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    overflow: hidden;
+    width: 20%;
+  }
+
+  .movie-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .movie-card h3 {
+    font-size: 12px;
+    max-width: 120px;
+    text-align: center;
+  }
+
+  .movie-card p {
+    font-size: 10px;
+    max-width: 250px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 488px) {
+  .movie-card {
+    overflow: hidden;
+    width: 20%;
+  }
+
+  .movie-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .movie-card h3 {
+    font-size: 8px;
+    max-width: 100px;
+    text-align: center;
+  }
+
+  .movie-card p {
+    font-size: 5px;
+    max-width: 250px;
+    text-align: center;
+  }
+}
